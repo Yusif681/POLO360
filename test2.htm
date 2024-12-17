@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body { background: silver; }
+            header  { grid-area: h; background: orange; }
+            nav     { grid-area: n; background: yellow; }
+            main    { grid-area: m; background: white; }
+            aside   { grid-area: a; background: gray; }
+            footer  { grid-area: f; background-color: red; }
+            .container {
+                display: grid;
+                grid-template-rows: 100px 30px 500px 90px 50px;
+                grid-template-areas: 'h'   'n'  'm'   'a'  'f';
+            }
+
+            @media only screen and (min-width: 768px) {
+                .container {
+                    max-width: 1000px;
+                    margin: auto;
+                    grid-template-rows: 100px 500px 50px;
+                    grid-template-columns: 25% auto 160px;
+                    grid-template-areas:   'n    h    h'  
+                                           'n    m    a'  
+                                           'f    f    a';
+                }
+
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header></header>
+            <nav></nav>
+            <main></main>
+            <aside></aside>
+            <footer></footer>
+        </div>
+    </body>
+</html>
